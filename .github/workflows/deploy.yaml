@@ -1,0 +1,40 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout code
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2️⃣ Setup Node
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 3️⃣ Install dependencies
+      - name: Install
+        run: npm install
+
+      # 4️⃣ Build project
+      - name: Build
+        run: npm run build
+
+      # 5️⃣ Login to Docker Hub
+      - name: Docker Login
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      # 6️⃣ Build Docker image
+      - name: Build Image
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/temple-app:latest .
+
+      # 7️⃣ Push to Docker Hub
+      - name: Push Image
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/temple-app:latest
