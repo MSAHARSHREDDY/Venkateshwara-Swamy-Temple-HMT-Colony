@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   🌙 GLOBAL DARK THEME
+========================= */
+@layer base {
+  html, body {
+    @apply bg-black text-white scroll-smooth;
+  }
+
+  h1 {
+    @apply text-3xl md:text-5xl lg:text-6xl font-bold;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl text-yellow-300 font-semibold;
+  }
+
+  p {
+    @apply text-gray-300 text-lg md:text-xl;
+  }
+}
+
+/* =========================
+   🧱 REUSABLE COMPONENTS
+========================= */
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-6 py-12;
+  }
+
+  .card {
+    @apply bg-white/10 backdrop-blur-lg p-6 rounded-2xl shadow-lg 
+           hover:scale-105 transition duration-300;
+  }
+}
+
+/* =========================
+   🌟 DIVINE AURA (OPTIONAL)
+========================= */
+.aura {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.5), transparent 70%);
+  filter: blur(60px);
+  animation: auraPulse 5s ease-in-out infinite;
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .aura {
+    width: 550px;
+    height: 550px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .aura {
+    width: 700px;
+    height: 700px;
+  }
+}
+
+@keyframes auraPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+}
+
+/* =========================
+   🌈 ANIMATED BORDER (IMAGE)
+========================= */
+.dynamic-border {
+  position: relative;
+  border-radius: 16px;
+  padding: 3px;
+  background: linear-gradient(
+    270deg,
+    #ffd700,
+    #ffae00,
+    #fff176,
+    #ffd700
+  );
+  background-size: 300% 300%;
+  animation: borderFlow 8s ease infinite;
+}
+
+.dynamic-border img {
+  border-radius: 14px;
+  display: block;
+  width: 100%;
+}
+
+/* smooth border animation */
+@keyframes borderFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* =========================
+   ✨ DYNAMIC TEXT (COLOR LOOP)
+========================= */
+.dynamic-text {
+  background: linear-gradient(
+    270deg,
+    #ffd700,
+    #ffae00,
+    #fff176,
+    #ffd700
+  );
+  background-size: 300% 300%;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: textFlow 6s ease infinite;
+}
+
+/* smooth text animation */
+@keyframes textFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* =========================
+   🌈 COLORFUL SCROLLBAR
+========================= */
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, gold, orange, yellow);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ffd700, #ffae00);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: gold black;
+}
+
+/* =========================
+   🌌 TEMPLE BACKGROUND ANIMATION
+========================= */
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background: radial-gradient(circle at top, #1a1a1a, #000000 70%),
+              linear-gradient(270deg, #1a1a1a, #000, #2a2a2a);
+
+  background-size: 400% 400%;
+  animation: bgMove 15s ease infinite;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* =========================
+/* =========================
+   🌸 FLOWER SHOWER (TOP FALL)
+========================= */
+/* 🌸 FLOWERS FINAL FIX */
+
+.flower {
+  position: fixed;
+  top: -40px;
+  width: 18px;
+  height: 18px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+
+  z-index: 10; /* 🔥 ABOVE CONTENT */
+  pointer-events: none; /* 🔥 IMPORTANT */
+
+  animation: fallFlower linear infinite;
+}
+
+
+
+@keyframes fallFlower {
+  0% {
+    transform: translateY(-10vh) translateX(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(110vh) translateX(20px) rotate(360deg);
+  }
+}
