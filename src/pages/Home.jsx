@@ -1,90 +1,76 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 import { templeConfig } from "../data/config";
-import { MessageCircle } from "lucide-react";
-import LiveKitWidget from "../components/ai_avatar/LiveKitWidget";
-
 
 const Home = () => {
-  const [showSupport, setShowSupport] = useState(false);
   const { scrollY } = useScroll();
 
-  // Parallax effect
-  const y = useTransform(scrollY, [0, 500], [0, 100]);
+  // 1. Adjusted Parallax: Only move slightly and keep it subtle.
+  // Using a negative value (e.g., -50) makes it float up, which feels more natural.
+  const contentY = useTransform(scrollY, [0, 500], [0, -50]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0.8]);
 
-  // Generate particles
   const [particles, setParticles] = useState([]);
 
   useEffect(() => {
-    const temp = Array.from({ length: 25 }).map((_, i) => ({
+    const temp = Array.from({ length: 30 }).map((_, i) => ({
       id: i,
       left: Math.random() * 100,
-      duration: 5 + Math.random() * 5,
+      duration: 6 + Math.random() * 6,
       delay: Math.random() * 5,
     }));
     setParticles(temp);
   }, []);
 
   return (
-    <div className="relative overflow-hidden min-h-screen flex flex-col items-center justify-center">
+    // 2. Removed overflow-hidden from here if you want a normal scrollable page.
+    // If this is just a hero section, keep it, but ensure the height isn't collapsed.
+    <div className="relative min-h-screen">
+      
+      {/* 🌌 Background */}
+      <div className="animated-bg fixed inset-0 z-0"></div>
 
-      {/* 🌌 BACKGROUND */}
-      <div className="animated-bg"></div>
-
-      {/* ✨ PARTICLES */}
+      {/* 🌸 Flowers */}
       {particles.map((p) => (
-        <div
+        <img
           key={p.id}
-          className="particle"
+          src="/flowers/flower1.png"
+          alt="flower"
+          className="flower fixed z-20 pointer-events-none" // Use fixed so they stay in view
           style={{
             left: `${p.left}%`,
-            bottom: "-10px",
+            top: "-50px",
             animationDuration: `${p.duration}s`,
             animationDelay: `${p.delay}s`,
           }}
         />
       ))}
 
-      {/* 🖼️ IMAGE WITH PARALLAX */}
-      <motion.div style={{ y }} className="dynamic-border inline-block">
-        <img
-          src="/images/venkateswara.jpg"
-          alt="Swamy"
-          className="w-[320px] md:w-[550px] lg:w-[650px]"
-        />
-      </motion.div>
-
-      {/* ✨ TEXT */}
-      <h1 className="dynamic-text text-center mt-6">
-        {templeConfig.name}
-      </h1>
-
-      <p className="mt-4 max-w-2xl text-center">
-        Experience divine blessings and spiritual peace.
-      </p>
-
-      {/* Floating AI Concierge Button */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <button
-          className="rounded-full bg-yellow-400 text-black 
-             shadow-lg hover:shadow-yellow-400/50 
-             transition-all duration-300 hover:scale-105 
-             flex items-center gap-2 px-6 py-3"
-          onClick={() => setShowSupport(true)}
+      {/* 🔥 CONTENT WRAPPER */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 pt-20 pb-40">
+        
+        <motion.div 
+          style={{ y: contentY, opacity }} 
+          className="flex flex-col items-center"
         >
-          <MessageCircle className="h-5 w-5" />
-          <span className="font-medium">Talk to AI Concierge</span>
-        </button>
-      </div>
-      {/* LiveKit Widget */}
-      {showSupport && (
-        <div className="fixed inset-0 z-50 flex items-end justify-end p-6 pointer-events-none">
-          <div className="pointer-events-auto">
-            <LiveKitWidget setShowSupport={setShowSupport} />
+          <div className="dynamic-border">
+            <img
+              src="/images/venkateswara.jpg"
+              alt="Swamy"
+              className="w-[280px] sm:w-[400px] md:w-[600px] rounded-lg shadow-2xl"
+            />
           </div>
-        </div>
-      )}
 
+          <h1 className="dynamic-text mt-8 text-2xl md:text-6xl font-bold">
+            {templeConfig.name}
+          </h1>
+
+          <p className="mt-4 max-w-2xl text-lg text-gray-200">
+            HMT Venkateshwara Swamy Temple located in Miyapur, Hyderabad is a sacred
+            place for devotees.
+          </p>
+        </motion.div>
+      </div>
     </div>
   );
 };

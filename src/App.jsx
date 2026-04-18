@@ -6,6 +6,7 @@ import Sevas from "./pages/Sevas";
 import Donations from "./pages/Donations";
 import Trustees from "./pages/Trustees";
 import Contact from "./pages/Contact";
+import Deities from "./pages/Deities";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/darshan" element={<Darshan />} />
+          <Route path="/deities" element={<Deities />} />
           <Route path="/sevas" element={<Sevas />} />
           <Route path="/donations" element={<Donations />} />
           <Route path="/trustees" element={<Trustees />} />

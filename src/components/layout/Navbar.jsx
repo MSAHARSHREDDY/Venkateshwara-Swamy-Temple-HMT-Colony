@@ -6,8 +6,8 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", path: "/" },
     { name: "Darshan", path: "/darshan" },
+    { name: "Deities", path: "/deities" },
     { name: "Sevas", path: "/sevas" },
     { name: "Donations", path: "/donations" },
     { name: "Trustees", path: "/trustees" },
@@ -22,12 +22,14 @@ const Navbar = () => {
 
         {/* 🪔 LOGO + NAME */}
         <div className="flex items-center gap-4">
+          <Link  to="/">
           <img
             src={templeConfig.logo}
             alt="logo"
             className="w-14 h-14 md:w-16 md:h-16 object-contain 
                        drop-shadow-[0_0_12px_gold]"
-          />
+          /></Link>
+          
 
           <h1 className="text-yellow-400 text-xl md:text-3xl font-bold tracking-wide">
             {templeConfig.shortName}

@@ -1,13 +1,11 @@
-// src/services/templeService.js
-
 import { templeData } from "../data/templeData";
-import { sevasData } from "../data/sevas";
 
 // Generic temple data
 export const getTempleData = async () => {
-  return templeData; //  instant
+  return templeData;
 };
 
+// ✅ Get sevas from templeData (BEST WAY)
 export const getSevas = async () => {
-  return sevasData; //  instant
+  return templeData.sevas;
 };
