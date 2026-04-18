@@ -13,7 +13,11 @@ const Trustees = () => {
   return (
     <div className="container-custom">
 
-      <h1>Trustees</h1>
+     {/* Page Header */}
+      <div className="text-center mb-12">
+        <h1 className="uppercase tracking-widest text-yellow-500">Trustees</h1>
+        <div className="h-1 w-24 bg-gradient-to-r from-transparent via-yellow-500 to-transparent mx-auto mt-4"></div>
+      </div>
 
       <div className="section">
         {data.board.map((t, i) => (

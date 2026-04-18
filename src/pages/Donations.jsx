@@ -162,7 +162,11 @@ const Donations = () => {
 
   return (
     <div className="container-custom max-w-xl mx-auto">
-      <h1 className="text-center mb-6">Donate</h1>
+      {/* Page Header */}
+      <div className="text-center mb-12">
+        <h1 className="uppercase tracking-widest text-yellow-500">Donations</h1>
+        <div className="h-1 w-24 bg-gradient-to-r from-transparent via-yellow-500 to-transparent mx-auto mt-4"></div>
+      </div>
 
       <div className="card space-y-4">
         <input

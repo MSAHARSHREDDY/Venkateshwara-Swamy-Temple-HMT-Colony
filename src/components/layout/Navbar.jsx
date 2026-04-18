@@ -31,7 +31,7 @@ const Navbar = () => {
           /></Link>
           
 
-          <h1 className="text-yellow-400 text-xl md:text-3xl font-bold tracking-wide">
+          <h1 className="text-yellow-400 text-sm md:text-2xl font-bold tracking-wide mt-5">
             {templeConfig.shortName}
           </h1>
         </div>

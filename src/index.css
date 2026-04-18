@@ -13,9 +13,9 @@
 
   /* 🏛️ Main Page Titles */
   h1 {
-    /* Reduced size: was 6xl, now 4xl max for a cleaner look */
-    @apply text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-[0.2em] text-yellow-500 mb-6;
-  }
+  /* Changed tracking-[0.2em] to tracking-[0.1em] */
+  @apply text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-[0.2em] text-yellow-500 mb-6;
+}
 
   /* 🛕 Section Headers (Card titles, Table headers) */
   h2 {

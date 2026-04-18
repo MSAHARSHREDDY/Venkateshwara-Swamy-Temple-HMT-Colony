@@ -21,8 +21,16 @@ const Deities = () => {
 
   return (
     <div className="p-6 mt-10">
-      {/* Grid set to 4 columns to force a single row on large screens */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+   
+      <div className="text-center">
+        <h1 className="text-yellow-200">
+          Deities of the Temple
+        </h1>
+        <div className="h-1 w-32 bg-gradient-to-r from-transparent via-yellow-500 to-transparent mx-auto mt-4"></div>
+      </div>
+
+         {/* Grid set to 4 columns to force a single row on large screens */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mt-20">
         {data.map((d, i) => (
           <div
             key={i}
