@@ -43,7 +43,7 @@ const Donations = () => {
       //     "Content-Type": "application/json",
       //   },
 
-      const res = await fetch("https://venkateshwara-swamy-temple-hmt-colo.vercel.app/create-order", {
+      const res = await fetch("https://venkateshwara-swamy-temple-backend.vercel.app/create-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -72,7 +72,7 @@ const Donations = () => {
             // ✅ VERIFY PAYMENT
             const verifyRes = await fetch(
               // "http://localhost:5000/verify-payment",
-              "https://venkateshwara-swamy-temple-hmt-colo.vercel.app/verify-payment",
+              "https://venkateshwara-swamy-temple-backend.vercel.app/verify-payment",
               {
                 method: "POST",
                 headers: {
