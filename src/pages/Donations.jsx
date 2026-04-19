@@ -29,6 +29,13 @@ const Donations = () => {
       return;
     }
 
+    const amount = Number(form.amount);
+
+    if (amount <= 0) {
+      alert("Enter valid amount");
+      return;
+    }
+
     const resScript = await loadRazorpay();
     if (!resScript) {
       alert("Razorpay failed to load");
@@ -37,25 +44,26 @@ const Donations = () => {
 
     try {
       // ✅ CREATE ORDER
-      // const res = await fetch("http://localhost:5000/create-order", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
+      const res = await fetch(
+        "https://venkateshwara-swamy-temple-backend.vercel.app/api/create-order",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            amount,
+          }),
+        }
+      );
 
-      const res = await fetch("https://venkateshwara-swamy-temple-backend.vercel.app/create-order", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-
-        body: JSON.stringify({
-          amount: form.amount,
-          name: form.name,
-          email: form.email,
-          phone: form.phone,
-        }),
-      });
+      // 🔥 SAFE JSON PARSE
+      if (!res.ok) {
+        const text = await res.text();
+        console.error("Server Error:", text);
+        alert("Backend error. Check logs.");
+        return;
+      }
 
       const order = await res.json();
 
@@ -69,10 +77,8 @@ const Donations = () => {
 
         handler: async function (response) {
           try {
-            // ✅ VERIFY PAYMENT
             const verifyRes = await fetch(
-              // "http://localhost:5000/verify-payment",
-              "https://venkateshwara-swamy-temple-backend.vercel.app/verify-payment",
+              "https://venkateshwara-swamy-temple-backend.vercel.app/api/verify-payment",
               {
                 method: "POST",
                 headers: {
@@ -80,7 +86,6 @@ const Donations = () => {
                 },
                 body: JSON.stringify({
                   ...response,
-                  ...form,
                 }),
               }
             );
@@ -90,12 +95,11 @@ const Donations = () => {
             if (data.success) {
               alert("🙏 Donation Successful");
 
-              // 🔥 GENERATE CLEAN PDF
+              // ✅ PDF RECEIPT
               const doc = new jsPDF();
 
-              doc.setFont("Helvetica", "normal");
-
               // Title
+              doc.setFont("Helvetica", "bold");
               doc.setFontSize(18);
               doc.text(
                 "Sri Venkateswara Swamy Temple",
@@ -109,36 +113,30 @@ const Donations = () => {
               doc.setFontSize(14);
               doc.text("Donation Receipt", 105, 30, null, null, "center");
 
-              // Line
               doc.line(20, 35, 190, 35);
 
               // Content
               doc.setFontSize(12);
 
-              doc.text(`Name: ${form.name}`, 20, 50);
-              doc.text(`Email: ${form.email}`, 20, 60);
-              doc.text(`Phone: ${form.phone}`, 20, 70);
-              doc.text(`Amount: INR ${form.amount}`, 20, 80);
+              doc.setFont("Helvetica", "bold");
+              doc.text("Name:", 20, 50);
+              doc.text("Email:", 20, 60);
+              doc.text("Phone:", 20, 70);
+              doc.text("Amount:", 20, 80);
+              doc.text("Payment ID:", 20, 100);
+              doc.text("Order ID:", 20, 110);
 
-              doc.text(
-                `Payment ID: ${response.razorpay_payment_id}`,
-                20,
-                100
-              );
-              doc.text(
-                `Order ID: ${response.razorpay_order_id}`,
-                20,
-                110
-              );
+              doc.setFont("Helvetica", "normal");
+              doc.text(form.name, 70, 50);
+              doc.text(form.email, 70, 60);
+              doc.text(form.phone, 70, 70);
+              doc.text(`INR ${amount}`, 70, 80);
+              doc.text(response.razorpay_payment_id, 70, 100);
+              doc.text(response.razorpay_order_id, 70, 110);
 
-              doc.text("Thank you for your donation", 20, 130);
+              doc.text("Thank you for your donation 🙏", 20, 140);
 
-              // 📥 DOWNLOAD
               doc.save("donation-receipt.pdf");
-
-              // 👉 OPTIONAL REDIRECT
-              // window.location.href = `/receipt?payment_id=${response.razorpay_payment_id}`;
-
             } else {
               alert("Payment verification failed");
             }
@@ -170,9 +168,10 @@ const Donations = () => {
 
   return (
     <div className="container-custom max-w-xl mx-auto">
-      {/* Page Header */}
       <div className="text-center mb-12">
-        <h1 className="uppercase tracking-widest text-yellow-500">Donations</h1>
+        <h1 className="uppercase tracking-widest text-yellow-500">
+          Donations
+        </h1>
         <div className="h-1 w-24 bg-gradient-to-r from-transparent via-yellow-500 to-transparent mx-auto mt-4"></div>
       </div>
 
