@@ -1,9 +1,0 @@
-{
-  "redirects": [
-    {
-      "source": "https://venkateswara-swamy-temple.in/(.*)",
-      "destination": "https://www.venkateswara-swamy-temple.in/$1",
-      "permanent": true
-    }
-  ]
-}
