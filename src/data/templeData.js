@@ -47,7 +47,7 @@ Daily rituals such as Suprabhatam, Archana, and Abhishekam are performed followi
   {
     id: 1,
     title: "Ganesha",
-    image: "/images/ganesha.jpg",
+    image: "/images/ganesh.jpg",
     description:
       "Lord Ganesha is the remover of obstacles and the god of wisdom and new beginnings.",
     significance:

@@ -17,7 +17,7 @@ export default function BackgroundAudio({ volume = 0.5, isEnabled, isMuted }) {
 
   return (
     <audio ref={audioRef} loop>
-      <source src="/audio/om_gan_ganpatay.mp3" type="audio/mpeg" />
+      <source src="/audio/venkateswara.mp3" type="audio/mpeg" />
     </audio>
   );
 }

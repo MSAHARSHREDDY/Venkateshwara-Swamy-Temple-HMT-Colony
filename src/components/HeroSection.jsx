@@ -33,13 +33,12 @@ export default function HeroSection({ audioEnabled, isMuted }) {
       <div className="relative z-20 flex flex-col items-center justify-end h-full pb-[4%] md:pb-[6%]">
         
         {/* ANIMATED GLOW CONTAINER */}
-        <div className="animate-pulse duration-[3000ms] transition-all">
-          <img 
-            src={img} 
-            alt="Venkateswara Swamy" 
-            className="w-[380px] md:w-[820px] lg:w-[650px] object-contain rounded-b-[50px] drop-shadow-[0_0_80px_rgba(255,223,0,0.8)]  " 
-          />
-        </div>
+       
+
+          <div className="relative z-10 flex flex-col items-center text-center mt-[180px] md:mt-[220px]">
+        <img src={img} alt="Ganesh" className="w-[180px] md:w-[650px] object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)] mb-8" />
+      </div>
+     
 
         {/* TELUGU TEXT OVERLAY */}
        
