@@ -1,0 +1,306 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================= */
+/* 🌼 Telangana Background */
+/* ============================= */
+.temple-bg {
+  background-color: lightblue;
+  
+  background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
+  background-size: 300px;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .temple-bg {
+    background-size: 180px; /* smaller pattern */
+  }
+}
+
+/* ============================= */
+/* ✨ Glow Effect */
+/* ============================= */
+.temple-glow {
+  box-shadow: 0 0 20px #ffd700, 0 0 40px #ffcc00;
+}
+
+/* Reduce glow for mobile */
+@media (max-width: 768px) {
+  .temple-glow {
+    box-shadow: 0 0 10px #ffd700;
+  }
+}
+
+/* ============================= */
+/* 🌟 Floating Particles */
+/* ============================= */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  background: radial-gradient(circle, rgba(255,215,0,0.6) 1px, transparent 1px);
+  background-size: 40px 40px;
+
+  animation: moveParticles 20s linear infinite;
+  z-index: 0;
+}
+
+/* Mobile: reduce density */
+@media (max-width: 768px) {
+  .particles {
+    background-size: 25px 25px;
+    animation-duration: 30s;
+  }
+}
+
+@keyframes moveParticles {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100px);
+  }
+}
+
+/* ============================= */
+/* 🟡 Glow Utility */
+/* ============================= */
+.glow {
+  box-shadow: 0 0 10px #ffd700, 0 0 20px #ffcc00;
+}
+
+/* ============================= */
+/* 🔥 Pulse Animation */
+/* ============================= */
+@keyframes goldPulse {
+  0% {
+    box-shadow: 0 0 8px #ffd700;
+  }
+  50% {
+    box-shadow: 0 0 20px #ffcc00;
+  }
+  100% {
+    box-shadow: 0 0 8px #ffd700;
+  }
+}
+
+.gold-pulse {
+  animation: goldPulse 2s infinite;
+}
+
+/* ============================= */
+/* 🖼️ Animated Image Border */
+/* ============================= */
+/* .image-border {
+  padding: 4px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #8b0000, #ffd700, #8b0000);
+  background-size: 300% 300%;
+  animation: borderMove 3s linear infinite;
+} */
+
+
+.image-border {
+  padding: 3px;
+  
+
+  background: linear-gradient(90deg, #ff512f, #dd2476, #ffd700);
+   
+ 
+  background-size: 300% 300%;
+
+  animation: borderMove 4s linear infinite;
+}
+
+@keyframes borderMove {
+  0% { background-position: 0% }
+  100% { background-position: 300% }
+}
+
+/* Mobile: thinner border */
+@media (max-width: 768px) {
+  .image-border {
+    padding: 2px;
+    border-radius: 8px;
+  }
+}
+
+/* Animation */
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+
+
+/* ============================= */
+/* 📱 GLOBAL RESPONSIVE HELPERS */
+/* ============================= */
+
+/* Prevent horizontal scroll issues */
+body {
+  overflow-x: hidden;
+}
+
+/* Images responsive by default */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Better text scaling */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* 🌟 Custom Scrollbar */
+/* 🌟 Premium Temple Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ffd700, #ff8c00);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ffcc00, #ffa500);
+}
+
+
+/* 🌺 Falling Flowers Container */
+.falling-flowers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* only till hero section */
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 50;
+}
+
+
+
+
+/* 🌺 ONLY inside image */
+.festival-effects {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+
+/* BIG + visible flowers */
+
+
+@keyframes fall {
+  0% {
+    transform: translateY(-80px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(500px); /* 🔥 reach full image height */
+    opacity: 0.9;
+  }
+}
+
+@keyframes flowerDrop {
+  0% {
+    transform: translateY(-100px);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translateY(350px); /* reach bottom */
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(350px); /* stay at bottom */
+    opacity: 0;
+  }
+}
+
+/* 🪔 STRONG diya glow */
+.diya-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 80%, rgba(255,215,0,0.6), transparent 60%),
+              radial-gradient(circle at 20% 20%, rgba(255,140,0,0.4), transparent 60%);
+  animation: glowMove 6s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+/* Glow animation */
+@keyframes glowMove {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+
+
+
+/* 🌺 GLOBAL FLOWERS */
+.flower-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* 🌹 Individual flower */
+.flower {
+  position: absolute;
+  top: -50px;
+  width: 18px; /* ✅ small size */
+  opacity: 0.9;
+
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* 🌬️ Falling animation */
+@keyframes fall {
+  0% {
+    transform: translateY(-50px) translateX(0) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(110vh) translateX(40px) rotate(360deg);
+  }
+}

@@ -1,0 +1,40 @@
+export const idolDonors = [
+  { donor: "Sri Padidam Mahender Reddy & Kavitha Sree", idol: "Hanuman Big Idol", amount: 125116 },
+  { donor: "Smt Spoorthi Patil & Smt Gowripriya Patil", idol: "Ganapathi Parivar", amount: 50116 },
+  { donor: "Sri Pallerla Srikanth & Aashritha", idol: "Rama Parivar", amount: 50116 },
+  { donor: "Sri Garimella Ram Kiran & Rama", idol: "Shiva Parivar", amount: 50116 },
+  { donor: "Sri Kallegalli Rajesh Kumar & Devi", idol: "Natya Ganapathi", amount: 50116 },
+  { donor: "Sri Donthu Upendra Kumar & Sireesha", idol: "Shiva & Vishnu", amount: 40000 },
+  { donor: "Sri S Sanjay & Divya", idol: "Nataraja Swamy", amount: 36000 },
+  { donor: "Sri A Pavan Kumar S/o Madhava Rao", idol: "Thumbhura", amount: 21116 },
+  { donor: "Chi Javvaji Anuhya & Sai Ananya", idol: "Laxmi Devi", amount: 21116 },
+  { donor: "Sri N Rajamouli Chary & Sujatha", idol: "Brahma", amount: 21116 },
+  { donor: "Sri R Mahesh Ganapathi & Sri Sravya", idol: "Dakshina Murthy", amount: 20116 },
+  { donor: "Chi Gottepulla Chervi Laasya & Chetan", idol: "Hanuman", amount: 20116 },
+  { donor: "Sri G Surya Dhruvatej & Sravani", idol: "Kumara Swamy", amount: 20116 },
+  { donor: "Sri Amarlapudi Nagabhushanam & Savithri", idol: "Naradha", amount: 20116 },
+  { donor: "Sri M Dharma Reddy & Ashoka Rani", idol: "Parvathi Devi", amount: 20016 },
+  { donor: "Sri A Veera Venkateswarlu & Rajeshwari", idol: "Ammavaru", amount: 20000 },
+  { donor: "Sri Y Gopala Krishnam Raju & Aruna", idol: "Gayathri Devi", amount: 20000 },
+  { donor: "Sri D Vijay Vardhan Reddy & Divya Vani", idol: "Garuthmanthudu", amount: 20000 },
+  { donor: "Sri T Ramakrishna & Harika", idol: "Saraswathi", amount: 20000 },
+  { donor: "Sri A Srinivasulu & Suhasini", idol: "Nataraja Swamy", amount: 20000 }
+];
+
+export const archDonors = [
+  { donor: "Sri S. Duryodhana Rao - Lalitha", amount: 111116 },
+  { donor: "Sri Chennupati Dasaradh Ram - Snehitha", amount: 50116 },
+  { donor: "Sri Arveti Chandra Shekar - Swapna", amount: 50116 },
+  { donor: "Sri Nidumolu Bosubabu - Lavanya", amount: 50116 },
+  { donor: "Sri K. Satyanarayana Raju - Surya Badravathi", amount: 50116 },
+  { donor: "Sri Shivanandalahari Group - Bhagavathula Manjula", amount: 40011 },
+  { donor: "Sri Ch Eshwar Rao - Punyavathi", amount: 25016 },
+  { donor: "Sri Bheemavarapu Sheshu Reddy", amount: 10116 },
+  { donor: "Sri Gudumasu Jaganmohan Rao - Radha", amount: 10116 },
+  { donor: "Sri Settupalli Balaji Narsimhulu - Anuradha", amount: 10116 },
+  { donor: "Sri Chola Rangarajan - Mohini Rajyalakshmi", amount: 10121 },
+  { donor: "Sri P Srihari Goud - Sindhuja", amount: 10116 },
+  { donor: "Sri Nadimpally Radhakrishnam Raju - Lavanya", amount: 10116 },
+  { donor: "Sri Purnachandar Rao - Padmavathi", amount: 10116 },
+  { donor: "Sri Vamshi - Gouthami", amount: 10000 }
+];

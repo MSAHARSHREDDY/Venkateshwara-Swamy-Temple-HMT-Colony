@@ -1,0 +1,28 @@
+{
+  "timings": {
+    "morning": "6:15 AM - 11:30 AM",
+    "evening": "6:00 PM - 8:30 PM"
+  },
+  "weeklySevas": [
+    { "day": "Monday", "deity": "Shiva", "seva": "Abhishekam", "time": "7:30 AM - 11:30 AM" },
+    { "day": "Tuesday", "deity": "Subramanya Swamy", "seva": "Abhishekam", "time": "7:30 AM" },
+    { "day": "Tuesday", "deity": "Anjaneya Swamy", "seva": "Aku Pooja", "time": "8:00 AM" },
+    { "day": "Wednesday", "deity": "Ganapathi", "seva": "Abhishekam / Garika Pooja", "time": "7:30 AM" },
+    { "day": "Saturday", "deity": "Rama", "seva": "Abhishekam / Tulasi Pooja", "time": "7:30 AM" }
+  ],
+  "festivals": [
+    { "date": "05-05-2026", "name": "Masa Shivaratri" },
+    { "date": "05-05-2026", "name": "Sankashtahara Chaturthi" }
+  ],
+  "donors": [
+    "J. Hanumantha Rao, Vijaya Lakshmi",
+    "C. Chandra sekaran"
+  ],
+  "sevaPrices": [
+    { "name": "Archana", "telugu": "అర్చన", "price": "21" },
+    { "name": "Abhishekam", "telugu": "అభిషేకము", "price": "51" },
+    { "name": "2W Pooja", "telugu": "వాహనపూజ 🛵", "price": "121" },
+    { "name": "4W Pooja", "telugu": "వాహనపూజ 🚗", "price": "251" }
+  ],
+  "upiId": "harihara1@indianbk"
+}
