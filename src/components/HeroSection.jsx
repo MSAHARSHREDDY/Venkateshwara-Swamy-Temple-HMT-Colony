@@ -116,10 +116,10 @@ export default function HeroSection({ audioEnabled, isMuted }) {
       absolute left-1/2 -translate-x-1/2
       
       /* 2. Control Height/Width - lg:w-[1000px] is likely too big for the arch, try 550px first */
-      w-[220px] md:w-[480px] lg:w-[35%] 
+      w-[220px] md:w-[480px] lg:w-[45%] 
       
       /* 3. Vertical Adjustment: Change this value to move it up or down */
-      bottom-[15%] md:bottom-[18%] lg:bottom-[13%]
+      bottom-[15%] md:bottom-[18%] lg:bottom-[15%]
       
       /* 4. Appearance */
       object-contain 
