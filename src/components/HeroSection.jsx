@@ -64,7 +64,7 @@
 //   );
 // }
 
-import img from "../assets/venkateswara-bg.jpg";
+import img from "../assets/venkateswara.jpg";
 import { useRef } from "react";
 import BackgroundAudio from "./BackgroundAudio";
 
@@ -83,71 +83,62 @@ export default function HeroSection({ audioEnabled, isMuted }) {
   };
 
   return (
-    <div className="relative w-full h-[750px] md:h-[1000px] flex flex-col items-center overflow-hidden bg-gradient-to-b from-orange-300 via-yellow-100 to-orange-400">
+    <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-yellow-100 via-yellow-900 to-red-900 px-4">
+
+      {/* 🔊 Background Audio */}
       <BackgroundAudio isEnabled={audioEnabled} volume={masterVolume} isMuted={isMuted} />
 
-      {/* 🛕 TEMPLE ARCH BACKGROUND */}
-      <div className="absolute inset-0 z-10 w-screen">
-        <img 
-          src="/designs/temple-arch.jpg" 
-          alt="Temple Arch" 
-          className="w-full h-full object-fill" 
-        />
+      {/* 🙏 IMAGE CARD */}
+      <div
+        onClick={playBell}
+        className="
+          relative
+          w-full max-w-[300px]
+          sm:max-w-[380px]
+          md:max-w-[480px]
+          lg:max-w-[550px]
+          xl:max-w-[920px]
+          cursor-pointer
+        "
+      >
+        {/* 🌟 Gradient Border */}
+        <div className="
+          rounded-3xl
+          p-[4px]
+          bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500
+        ">
+          
+          {/* 🟡 Inner Container */}
+          <div className="
+            bg-white/90
+            backdrop-blur-sm
+            rounded-3xl
+            overflow-hidden
+          ">
+            <img
+              src={img}
+              alt="Sri Venkateswara Swamy"
+              className="
+                w-full h-auto object-contain
+
+                /* ✨ soft glow */
+                drop-shadow-[0_0_35px_rgba(255,215,0,0.6)]
+              "
+            />
+          </div>
+        </div>
+
+        {/* 🌞 Soft outer glow */}
+        <div className="
+          absolute inset-0 rounded-3xl
+          bg-gradient-to-r from-yellow-300/20 via-orange-300/20 to-yellow-300/20
+          blur-xl -z-10
+        " />
       </div>
 
-      {/* 🎯 DEITY ALIGNMENT CONTAINER */}
-      <div className="relative z-20 flex flex-col items-center justify-end h-full w-full">
-        
-        {/* ADJUSTMENTS:
-          - max-w: Constrains the width so it doesn't spill over the brown pillars.
-          - translate-y: Pushes the image down to sit exactly on the brown "floor" line.
-          - pb: Adds a tiny bit of padding so the feet aren't cut off by the screen edge.
-        */}
-
-        {/* 🎯 DEITY ALIGNMENT CONTAINER */}
-<div className="relative w-full h-full flex items-center justify-center">
-  {/* The Arch is your background/container */}
-  
-  <img 
-    src={img} 
-    alt="Sri Venkateswara Swamy" 
-    className="
-      /* 1. Position it absolutely in the center */
-      absolute left-1/2 -translate-x-1/2
-      
-      /* 2. Control Height/Width - lg:w-[1000px] is likely too big for the arch, try 550px first */
-      w-[220px] md:w-[480px] lg:w-[45%] 
-      
-      /* 3. Vertical Adjustment: Change this value to move it up or down */
-      bottom-[15%] md:bottom-[18%] lg:bottom-[15%]
-      
-      /* 4. Appearance */
-      object-contain 
-      drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)]
-      z-10
-    " 
-  />
-</div>
-     
-      </div>
-
-      {/* 🔔 BELL INTERACTION ZONES */}
-      <div className="absolute top-0 left-0 w-full h-full z-30 pointer-events-none">
-        <style dangerouslySetInnerHTML={{ __html: `
-          .bell-trigger { position: absolute; cursor: pointer; pointer-events: auto; }
-          @font-face { font-family: 'telugu'; src: local('Gautami'), local('Nirmala UI'); }
-        `}} />
-        
-        {/* Adjusted zones to match arch bells */}
-        <div onClick={playBell} className="bell-trigger w-[10%] h-[12%] top-[21%] left-[45%]" />
-        <div onClick={playBell} className="bell-trigger w-[8%] h-[10%] top-[28%] left-[32%]" />
-        <div onClick={playBell} className="bell-trigger w-[8%] h-[10%] top-[28%] left-[60%]" />
-      </div>
     </div>
   );
 }
-
-
 
 //suprabhatham******
 // import img from "../assets/venkateswara.jpg";
