@@ -64,7 +64,7 @@
 //   );
 // }
 
-import img from "../assets/venkateswara-bg.jpg";
+import img from "../assets/venkateswara.jpg";
 import { useRef } from "react";
 import BackgroundAudio from "./BackgroundAudio";
 
@@ -83,7 +83,7 @@ export default function HeroSection({ audioEnabled, isMuted }) {
   };
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-orange-100 via-yellow-50 to-orange-200 px-4">
+    <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-orange-500 via-yellow-600 to-blue-200 px-4">
 
       {/* 🔊 Background Audio */}
       <BackgroundAudio isEnabled={audioEnabled} volume={masterVolume} isMuted={isMuted} />
@@ -98,7 +98,7 @@ export default function HeroSection({ audioEnabled, isMuted }) {
           sm:max-w-[400px]
           md:max-w-[500px]
           lg:max-w-[600px]
-          xl:max-w-[700px]
+          xl:max-w-[1200px]
           cursor-pointer
         "
       >
@@ -117,15 +117,20 @@ export default function HeroSection({ audioEnabled, isMuted }) {
             overflow-hidden
           ">
             <img
-              src={img}
-              alt="Sri Venkateswara Swamy"
-              className="
-                w-full 
-                h-auto 
-                object-contain
-                drop-shadow-[0_0_35px_rgba(255,215,0,0.6)]
-              "
-            />
+  src={img}
+  alt="Sri Venkateswara Swamy"
+  className="
+    w-full
+    h-[300px]        /* mobile */
+    sm:h-[380px]
+    md:h-[500px]
+    lg:h-[600px]
+    xl:h-[800px]
+
+    object-contain
+    drop-shadow-[0_0_35px_rgba(255,215,0,0.6)]
+  "
+/>
           </div>
         </div>
 
