@@ -64,7 +64,7 @@
 //   );
 // }
 
-import img from "../assets/venkateswara.jpg";
+import img from "../assets/venkateswara-bg.jpg";
 import { useRef } from "react";
 import BackgroundAudio from "./BackgroundAudio";
 
@@ -83,7 +83,7 @@ export default function HeroSection({ audioEnabled, isMuted }) {
   };
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-yellow-100 via-yellow-900 to-red-900 px-4">
+    <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-orange-100 via-yellow-50 to-orange-200 px-4">
 
       {/* 🔊 Background Audio */}
       <BackgroundAudio isEnabled={audioEnabled} volume={masterVolume} isMuted={isMuted} />
@@ -93,11 +93,12 @@ export default function HeroSection({ audioEnabled, isMuted }) {
         onClick={playBell}
         className="
           relative
-          w-full max-w-[300px]
-          sm:max-w-[380px]
-          md:max-w-[480px]
-          lg:max-w-[550px]
-          xl:max-w-[920px]
+          w-full
+          max-w-full              /* ✅ FULL WIDTH ON MOBILE */
+          sm:max-w-[400px]
+          md:max-w-[500px]
+          lg:max-w-[600px]
+          xl:max-w-[700px]
           cursor-pointer
         "
       >
@@ -119,16 +120,16 @@ export default function HeroSection({ audioEnabled, isMuted }) {
               src={img}
               alt="Sri Venkateswara Swamy"
               className="
-                w-full h-auto object-contain
-
-                /* ✨ soft glow */
+                w-full 
+                h-auto 
+                object-contain
                 drop-shadow-[0_0_35px_rgba(255,215,0,0.6)]
               "
             />
           </div>
         </div>
 
-        {/* 🌞 Soft outer glow */}
+        {/* 🌞 Soft Outer Glow */}
         <div className="
           absolute inset-0 rounded-3xl
           bg-gradient-to-r from-yellow-300/20 via-orange-300/20 to-yellow-300/20
