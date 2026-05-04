@@ -139,6 +139,7 @@ Daily rituals such as Suprabhatam, Archana, and Abhishekam are performed followi
       },
       { name: "Gallery", path: "/gallery" },
       { name: "Contact", path: "/contact" },
+      { name: "Notice", path: "/notice" },
     ],
   },
 

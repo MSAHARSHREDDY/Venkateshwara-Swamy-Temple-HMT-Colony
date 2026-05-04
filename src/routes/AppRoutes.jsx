@@ -12,6 +12,7 @@ import Gallery from "../pages/Gallery";
 import Contact from "../pages/Contact";
 import TempleInfo from "../pages/TempleInfo";
 import Donors from "../pages/Donors";
+import NoticePage from "../pages/NoticePage";
 
 
 export default function AppRoutes() {
@@ -28,6 +29,7 @@ export default function AppRoutes() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/info/:type" element={<TempleInfo />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/notice" element={<NoticePage />} />
         </Routes>
       </Layout>
     </BrowserRouter>

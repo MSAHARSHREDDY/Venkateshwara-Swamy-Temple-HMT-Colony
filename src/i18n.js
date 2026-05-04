@@ -1,32 +1,10 @@
-const resources = {
-  en: {
-    translation: {
-      "temple_name": "Ganesha Temple",
-      "location": "Vediri Township",
-      "home": "Home",
-      "gallery": "Gallery",
-      "about": "About",
-      "sevas": "Sevas"
-    }
-  },
-  te: {
-    translation: {
-      "temple_name": "గణపతి దేవాలయం",
-      "location": "వేదిరి టౌన్‌షిప్",
-      "home": "హోమ్",
-      "gallery": "గ్యాలరీ",
-      "about": "గురించి",
-      "sevas": "సేవలు"
-    }
-  },
-  hi: {
-    translation: {
-      "temple_name": "गणपति मंदिर",
-      "location": "वेदिरी टाउनशिप",
-      "home": "मुख्य पृष्ठ",
-      "gallery": "गैलरी",
-      "about": "परिचय",
-      "sevas": "सेवाएं"
-    }
-  }
-};
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+
+i18n.use(initReactI18next).init({
+  resources: {},
+  lng: "en",
+  interpolation: { escapeValue: false }
+});
+
+export default i18n;

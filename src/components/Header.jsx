@@ -2,7 +2,7 @@ export default function Header() {
   return (
     <div className="temple-bg text-center py-4 border-b-4 border-yellow-700">
 
-      <h1 className="text-3xl md:text-4xl font-bold text-red-800">
+      <h1 className="text-2xl md:text-4xl font-bold text-red-800">
         SRI SRIDEVI, BHUDEVI SAMETHA SRI KALYANA VENKATESWARA SWAMY VARI DEVASTHANAM
       </h1>
 
