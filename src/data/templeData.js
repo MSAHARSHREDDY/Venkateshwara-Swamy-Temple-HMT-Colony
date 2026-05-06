@@ -104,7 +104,7 @@ Daily rituals such as Suprabhatam, Archana, and Abhishekam are performed followi
       "Goda Devi, also known as Andal, is a revered devotee of Lord Vishnu and an incarnation of Bhudevi.",
     significance:
       "She represents pure devotion and is worshipped for marital harmony and spiritual growth.",
-    location: "Near Venkateswara Shrine",
+    location: "Inner Temple",
     days: "Friday, Margazhi Month",
     prasadam: "Sweet Pongal, Flowers",
   },

@@ -19,64 +19,58 @@ export default function HeroSection({ audioEnabled, isMuted }) {
   };
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-orange-500 via-yellow-600 to-blue-200 px-4">
-
+<div className="w-full min-h-[auto] sm:min-h-screen flex items-start sm:items-center justify-center bg-gradient-to-b from-orange-500 via-yellow-600 to-blue-200 px-2 sm:px-4 py-4 sm:py-0">
       {/* 🔊 Background Audio */}
       <BackgroundAudio isEnabled={audioEnabled} volume={masterVolume} isMuted={isMuted} />
 
       {/* 🙏 IMAGE CARD */}
-      <div
-        onClick={playBell}
-        className="
-          relative
-          w-full
-          max-w-full              /* ✅ FULL WIDTH ON MOBILE */
-          sm:max-w-[400px]
-          md:max-w-[500px]
-          lg:max-w-[600px]
-          xl:max-w-[1200px]
-          cursor-pointer
-        "
-      >
-        {/* 🌟 Gradient Border */}
-        <div className="
-          rounded-3xl
-          p-[4px]
-          bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500
-        ">
-
-          {/* 🟡 Inner Container */}
-          <div className="
-            bg-white/90
-            backdrop-blur-sm
-            rounded-3xl
-            overflow-hidden
-          ">
-            <img
-  src={img}
-  alt="Sri Venkateswara Swamy"
+<div
+  onClick={playBell}
   className="
-    w-full
-    h-[300px]        /* mobile */
-    sm:h-[380px]
-    md:h-[500px]
-    lg:h-[600px]
-    xl:h-[800px]
-
-    object-contain
-    drop-shadow-[0_0_35px_rgba(255,215,0,0.6)]
+    relative 
+    w-[95%] sm:w-full      /* Use 95% width on mobile to get close to edges but keep a tiny margin */
+    sm:max-w-[400px] 
+    md:max-w-[500px] 
+    lg:max-w-[600px] 
+    xl:max-w-[1000px] 
+    cursor-pointer
+    mx-auto
   "
-/>
-          </div>
-        </div>
-
-        {/* 🌞 Soft Outer Glow */}
-        <div className="
-          absolute inset-0 rounded-3xl
-          bg-gradient-to-r from-yellow-300/20 via-orange-300/20 to-yellow-300/20
-          blur-xl -z-10
-        " />
-      </div>
+>
+  {/* 🌟 Gradient Border */}
+  <div className="
+    rounded-2xl sm:rounded-3xl 
+    p-[2px] sm:p-[4px] 
+    bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500
+  ">
+    {/* 🟡 Inner Container - REMOVED fixed height to let image define the size */}
+    {/* 🟡 Inner Container - Now auto-adjusts to image height */}
+<div className="
+  bg-white/90 
+  backdrop-blur-sm 
+  rounded-2xl sm:rounded-3xl 
+  overflow-hidden
+  flex flex-col
+">
+  <img
+    src={img}
+    alt="Sri Venkateswara Swamy"
+    className="
+      w-full 
+      h-auto 
+      /* This ensures the image fills the space without leaving top/bottom padding */
+      aspect-[4/3] sm:aspect-auto 
+      object-cover sm:object-contain
+      
+      /* Subtle zoom to crop out any existing white borders in the jpg file */
+      scale-[1.05] sm:scale-100
+      
+      drop-shadow-[0_0_35px_rgba(255,215,0,0.6)]
+    "
+  />
+</div>
+  </div>
+</div>
 
     </div>
   );
