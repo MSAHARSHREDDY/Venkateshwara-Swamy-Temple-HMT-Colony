@@ -212,24 +212,24 @@ export default function SubTemples() {
                   
                   <div className="flex items-start gap-1">
                    <span className="text-[12px] sm:text-base">🙏</span>
-                    <p className="bold-text leading-tight">
+                    <p className="bold-text leading-tight text-xs sm:text-sm  ">
                       {temple.significance}
                     </p>
                   </div>
 
                   <div className="flex items-center gap-1">
                     <span className="text-[12px] sm:text-base">📍</span>
-                    <p className="font-bold text-gray-800">{temple.location}</p>
+                    <p className="font-semibold text-gray-800 text-xs sm:text-sm ">{temple.location}</p>
                   </div>
 
                   <div className="flex items-center gap-1">
                     <span className="text-[12px] sm:text-base">📅</span>
-                    <p className="font-bold text-gray-800">{temple.days}</p>
+                    <p className="font-semibold text-gray-800 text-xs sm:text-sm ">{temple.days}</p>
                   </div>
 
                   <div className="flex items-center gap-1">
                     <span className="text-[12px] sm:text-base">🍛</span>
-                    <p className="font-bold text-gray-800">{temple.prasadam}</p>
+                   <p className="font-semibold text-gray-800 text-xs sm:text-sm ">{temple.prasadam}</p>
                   </div>
 
                 </div>

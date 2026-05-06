@@ -10,7 +10,7 @@ export default function SevasSection() {
     <div className="temple-bg py-16 px-6 cursor-default">
       
       {/* Page Title - High Contrast Bold */}
-      <h2 className="text-center text-5xl md:text-3xl font-black mb-16 text-red-900 uppercase tracking-tighter">
+      <h2 className="text-center text-3xl md:text-3xl font-black mb-16 text-red-900 uppercase tracking-tighter">
          Sevas
       </h2>
 
